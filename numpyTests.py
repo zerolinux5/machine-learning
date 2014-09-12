@@ -2,4 +2,6 @@ from numpy import *
 random.rand(4,4)
 randMat = mat(random.rand(4,4))
 invRandMat = randMat.I
-print (randMat*invRandMat)
+myEye = randMat*invRandMat
+print(myEye)
+print(myEye - eye(4))
