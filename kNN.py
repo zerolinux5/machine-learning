@@ -23,15 +23,15 @@ def classify0(inX, dataSet, labels, k):
 
 def fileToMatrix(filename):
 	file = open(filename)
-	numLines = len(file.readlines())
+	arrayLines = file.readlines()
+	numLines = len(arrayLines)
 	returnMat = zeros((numLines, 3))
 	classLabelVector = []
-	file = open(filename)
 	index = 0
-	for line in file.readlines():
+	for line in arrayLines:
 		line = line.strip()
 		listFromLine = line.split('\t')
-		returnMat[index:] = listFromLine[0:3]
+		returnMat[index,:] = listFromLine[0:3]
 		classLabelVector.append(int(listFromLine[-1]))
 		index += 1
 	return returnMat,classLabelVector
